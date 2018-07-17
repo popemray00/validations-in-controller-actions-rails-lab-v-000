@@ -12,10 +12,15 @@ class PostsController < ApplicationController
 
     if @post.valid?
       @post.save
-      
+
+      redirect_to post_path(@post)
+    else
+
+      render :new
     end
 
-    redirect_to post_path(@post)
+
+
   end
 
   private
